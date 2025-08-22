@@ -115,7 +115,7 @@ spec:
             - name: SUPABASE_URL
               value: http://{{ include "supabase.kong.fullname" . }}:{{ .Values.kong.service.port }}
             {{- end }}
-          {{- with .Values.auth.envFrom }}
+          {{- with .Values.functions.envFrom }}
           envFrom:
             {{- toYaml . | nindent 12 }}
           {{- end }}
